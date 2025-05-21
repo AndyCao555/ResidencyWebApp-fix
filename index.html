@@ -3,163 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ISE Student Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>ISE Homepage</title>
     <style>
       body {
-        font-family: 'Inter', sans-serif;
-        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
+        background-color: #f8f8f8;
+        text-align: center;
       }
 
-      .container {
+      h1 {
+        margin-top: 100px;
+        font-size: 40px;
+      }
+
+      .section-container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
+        margin: 50px 0;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 40px 0;
+      }
+
+      .section {
         flex: 1;
-        padding: 40px 20px;
+        padding: 0 20px;
       }
 
-      .logo-text {
-        font-size: 48px;
-        font-weight: 700;
-        margin-bottom: 20px;
+      .section h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
       }
 
-      .login-card {
-        background-color: white;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 400px;
-      }
-
-      .login-header h1 {
-        margin-bottom: 10px;
-      }
-
-      .login-header p {
-        margin-bottom: 30px;
-        color: #555;
-      }
-
-      .form-group {
-        margin-bottom: 20px;
-        text-align: left;
-      }
-
-      .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: 600;
-      }
-
-      .form-input {
-        width: 100%;
-        padding: 10px;
+      .section button {
+        padding: 10px 20px;
         font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-
-      .Login-Button {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
-        font-weight: bold;
-        background-color: #0056b3;
-        color: white;
-        border: none;
-        border-radius: 5px;
+        margin-bottom: 15px;
         cursor: pointer;
       }
 
-      .Login-Button:hover {
-        background-color: #004494;
-      }
-
-      .footer {
-        text-align: center;
-        padding: 20px;
-        font-size: 14px;
-        color: #777;
+      .section:not(:last-child) {
+        border-right: 1px solid #ccc;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="logo">
-        <div class="logo-text">ISE</div>
+    <h1>ISE Residency Portal</h1>
+
+    <div class="section-container">
+      <div class="section">
+        <h2>Student Login</h2>
+        <button onclick="window.location.href='StudentLogin.html'">Login</button>
+        <p>Log in to view the jobs board</p>
       </div>
-
-      <div class="login-card">
-        <div class="login-header">
-          <h1>Welcome Back</h1>
-          <p>Sign in to your student account</p>
-        </div>
-
-        <form id="login-form">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input 
-              type="email" 
-              id="email" 
-              class="form-input" 
-              placeholder="youremail@studentmail.ul.ie" 
-              pattern="[a-z0-9._%+-]+@studentmail\.ul\.ie$" 
-              title="Please enter a valid student email address ending with @studentmail.ul.ie" 
-              required
-            >
-          </div>
-
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input 
-              type="password" 
-              id="password" 
-              class="form-input" 
-              placeholder="••••••••" 
-              minlength="8" 
-              required
-            >
-          </div>
-
-          <button type="submit" class="Login-Button">Sign In</button>
-        </form>
+      <div class="section">
+        <h2>Company Login</h2>
+        <button>Login</button>
+        <p>Login with the information provided by the ISE department to post a job</p>
       </div>
-
-      <div class="footer">
-        <p>&copy; 2025 ISE - Innovative Software Engineering, University of Limerick</p>
+      <div class="section">
+        <h2>Apply to be a residency company</h2>
+        <button>Apply</button>
+        <p>Fill out the form to apply to be a residency company</p>
       </div>
     </div>
-
-    <script>
-      document.getElementById("login-form").addEventListener("submit", function(e) {
-        e.preventDefault(); // Prevent default form submission
-
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-
-        // Example hardcoded credentials
-        const validEmail = "test@studentmail.ul.ie";
-        const validPassword = "password123";
-
-        if (email === validEmail && password === validPassword) {
-          // Store email to use on the dashboard
-          localStorage.setItem("studentEmail", email);
-          // Redirect to dashboard
-          window.location.href = "dashboard.html";
-        } else {
-          alert("Invalid email or password.");
-        }
-      });
-    </script>
   </body>
 </html>
