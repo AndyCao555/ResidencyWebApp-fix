@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Homepage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .section {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .section:not(:last-child) {
+      border-right: 1px solid #ccc;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      font-size: 16px;
+      margin: 15px 0;
+    }
+
+    .section button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ISE Residency List</h1>
+
+  <div class="container">
+    <div class="section">
+      <h2>Student Login</h2>
+      <button>Login</button>
+      <p>Sign in with your student email and password to see the jobs board and rank your preferences.</p>
+    </div>
+    <div class="section">
+      <h2>Company Login</h2>
+      <button>Login</button>
+      <p>Sign in with the login information provided by the ISE department to post a job listing.</p>
+    </div>
+    <div class="section">
+      <h2>Become a Residency Company</h2>
+      <button>Apply</button>
+      <p>Apply to become a residency company by filling out the form below. 
+        If accepted you will be provided with login information to post a job listing</p>
+    </div>
+  </div>
+
+</body>
+</html>
