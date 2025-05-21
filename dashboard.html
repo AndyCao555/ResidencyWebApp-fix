@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard</title>
+</head>
+<body>
+  <h1>Welcome to Your Dashboard</h1>
+  <p id="welcome-message"></p>
+
+  <script>
+    const email = localStorage.getItem("studentEmail");
+    if (email) {
+      document.getElementById("welcome-message").textContent = "Logged in as: " + email;
+    } else {
+      // Redirect if not logged in
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
