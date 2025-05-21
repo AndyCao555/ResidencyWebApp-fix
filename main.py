@@ -1,16 +1,24 @@
 import psycopg2
 
-conn = psycopg2.connect(
-    dbname="ResidencyISE",
-    user="postgres",
-    password="postgrespassword",
-    host="localhost",
-    port="5432"
-)
+try:
+    conn = psycopg2.connect(
+        dbname="ResidencyISE",
+        user="postgres",
+        password="postgrespassword",
+        host="localhost",
+        port="5432",
+        connect_timeout=1
+    )
+    cur = conn.cursor()
+    cur.execute("SELECT version();")
 
-cur = conn.cursor()
-cur.execute("SELECT version();")  # Example query
+    version = cur.fetchone()
+    print("PostgreSQL version:", version)
 
-version = cur.fetchone()
-print(version)
+    print("Connection success")
 
+    cur.close()
+    conn.close()
+
+except Exception as error:
+    print("Connection failed:", error)
