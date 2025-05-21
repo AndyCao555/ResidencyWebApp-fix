@@ -1,12 +1,18 @@
 import psycopg2
 
+DB_NAME = "ResidencyISE"
+DB_USER = "postgres"
+DB_PASSWORD = "postgrespassword"
+DB_HOST = "localhost"
+DB_PORT = "5432"
+
 try:
     conn = psycopg2.connect(
-        dbname="ResidencyISE",
-        user="postgres",
-        password="postgrespassword",
-        host="localhost",
-        port="5432",
+        dbname=DB_NAME,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        host=DB_HOST,
+        port=DB_PORT,
         connect_timeout=1
     )
     cur = conn.cursor()
