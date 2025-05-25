@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Residency Listing</title>
+    <link rel="stylesheet" href="PostListing.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">[ISE]</div>
+    </header>
+
+    <main class="main-content">
+        <h1>Post Residency Listing</h1>
+        <form id="listingForm" class="listing-form">
+            <label for="title">Residency Title</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Job Description</label>
+            <textarea id="description" name="description" rows="8" required></textarea>
+
+            <label for="conditions">Special Conditions</label>
+            <input type="text" id="conditions" name="conditions">
+
+            <label for="salary">Salary</label>
+            <input type="text" id="salary" name="salary">
+
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location">
+
+            <label for="accommodation">Accommodation Support</label>
+            <input type="text" id="accommodation" name="accommodation">
+
+            <label for="bio">Company Bio</label>
+            <input type="text" id="bio" name="bio">
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <p>Thank you for posting a residency listing!</p>
+            <button onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('listingForm');
+        const modal = document.getElementById('modal');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            modal.classList.remove('hidden');
+        });
+
+        function goBack() {
+            window.location.href = 'CompanyDashboard.html';
+        }
+    </script>
+</body>
+</html>
