@@ -7,8 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CompanyLogin.css">
         <link rel="icon" type="image/png" href="images/Favicon.png">
-
-
+      
   </head>
   <body class="CompanyLogin">
     <div class="container">
@@ -56,27 +55,12 @@
         <p>&copy; 2025 ISE - Innovative Software Engineering, University of Limerick</p>
       </div>
     </div>
+    <!-- Add supabase client library -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <!-- Add our Supabase configuration -->
+    <script src="supabase-config.js"></script>
+    <!-- Add our login functionality -->
+    <script src="companyLogin.js"></script>
 
-    <script>
-      document.getElementById("login-form").addEventListener("submit", function(e) {
-        e.preventDefault(); // Prevent default form submission
-
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-
-        // Example hardcoded credentials
-        const validEmail = "company1@studentmail.ul.ie";
-        const validPassword = "password123";
-
-        if (email === validEmail && password === validPassword) {
-          // Store email to use on the dashboard
-          localStorage.setItem("studentEmail", email);
-          // Redirect to dashboard
-          window.location.href = "CompanyDashboard.html";
-        } else {
-          alert("Invalid email or password.");
-        }
-      });
-    </script>
   </body>
 </html>
