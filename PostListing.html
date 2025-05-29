@@ -22,8 +22,8 @@
             <label for="description">Job Description</label>
             <textarea id="description" name="description" rows="8" required></textarea>
 
-            <label for="conditions">Special Conditions</label>
-            <input type="text" id="conditions" name="conditions">
+            <label for="special_conditions">Special Conditions</label>
+            <input type="text" id="special_conditions" name="special_conditions">
 
             <label for="salary">Salary</label>
             <input type="text" id="salary" name="salary">
@@ -31,8 +31,8 @@
             <label for="location">Location</label>
             <input type="text" id="location" name="location">
 
-            <label for="accommodation">Accommodation Support</label>
-            <input type="text" id="accommodation" name="accommodation">
+            <label for="accommodation_support">Accommodation Support</label>
+            <input type="text" id="accommodation_support" name="accommodation_support">
 
             <label for="bio">Company Bio</label>
             <input type="text" id="bio" name="bio">
@@ -62,5 +62,9 @@
             window.location.href = 'CompanyDashboard.html';
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="postlistings.js"></script>
+    
 </body>
 </html>
