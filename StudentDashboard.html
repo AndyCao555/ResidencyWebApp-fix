@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="StudentDashboard.css">
+        <link rel="icon" type="image/png" href="images/Favicon.png">
+
 </head>
 <body>
-  <h1>Welcome to Your Dashboard</h1>
-  <p id="welcome-message"></p>
+    <header class="header">
+        <div class="logo">[ISE]</div>
+    </header>
 
-  <script>
-    const email = localStorage.getItem("studentEmail");
-    if (email) {
-      document.getElementById("welcome-message").textContent = "Logged in as: " + email;
-    } else {
-      // Redirect if not logged in
-      window.location.href = "index.html";
-    }
-  </script>
+    <main class="dashboard-container">
+        <section class="dashboard-section">
+            <h2>Apply for a Residency</h2>
+            <button onclick="window.location.href='StudentApplication.html'">Apply</button>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>View Listings</h2>
+            <button onclick="window.location.href='ViewListings.html'">View Listings</button>
+        </section>
+    </main>
 </body>
 </html>
