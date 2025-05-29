@@ -4,15 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('modal');
   
     form.addEventListener('submit', async function(e) {
-      e.preventDefault();
+      e.preventDefault(); // stops empty form
 
-      // Check if user is authenticated
+      
+      // Checkign if user is authenticated to post listings
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
       alert('Please sign in first');
-      return; // Stop form submission if not signed in
+      return; // Stops listing submission if not signed in
     }
 
+    
+    // stores form data in an object
       const data = {
         title: form.title.value,
         description: form.description.value,
@@ -23,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         bio: form.bio.value
       };
   
-      // Insert into Supabase
+      // inserts listing into Supabase
       const { error } = await supabase
-        .from('residency') // Use your actual table name
+        .from('residency') 
         .insert([data]);
   
       if (error) {
@@ -38,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-  // Modal button function
+  // modal button function bringing you back to the compnay dashboard
   function goBack() {
     window.location.href = 'CompanyDashboard.html';
   }
