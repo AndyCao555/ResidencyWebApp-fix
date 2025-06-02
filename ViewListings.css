@@ -174,3 +174,15 @@
     background: #145e17;
     transform: translateY(-2px);
   }
+
+  .listing-bio p {
+    font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+  }
+  
+.listing-special-conditions p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+}

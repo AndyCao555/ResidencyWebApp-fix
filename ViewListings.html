@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>View Listings - ISE Residency Portal</title>
     <link rel="stylesheet" href="ViewListings.css">
-  
   </head>
   <body class="index">
     <h1>View Listings</h1>
@@ -17,34 +16,13 @@
       </div>
       
       <div class="listings-content">
-       <div class="listing-card">
-     <div class="listing-header">
-      <h3>Software Developer</h3>
-      <p class="company-name">Boring Company name here</p>
-     </div>
-     <div class="listing-details">
-      <p><strong>Location:</strong> Dublin, Ireland</p>
-      <p><strong>Duration:</strong> 6 months</p>
-      <p><strong>Salary:</strong> 6 billion dollars</p>
-     </div>
-     <div class="listing-description">
-      <p>
-      blah blah blah here
-      </p>
-     </div>
-     <div class="listing-actions">
-      <button class="apply-button">Apply Now</button>
+        <!-- listings as added should appear here  -->
       </div>
-   </div>
-</div>
-        
-        
 
-          <div class="No-Listings">
-          <h3>No listings available yet</h3>
-          <p>Listings will appear here once companies start posting residencies.</p>
-          <button onclick="window.location.href='Index.html'" class="back-button">Back to Home</button>
-        </div>
+      <div class="No-Listings">
+        <h3>No listings available yet</h3>
+        <p>Listings will appear here once companies start posting residencies.</p>
+        <button onclick="window.location.href='Index.html'" class="back-button">Back to Home</button>
       </div>
     </div>
 
@@ -52,8 +30,9 @@
       <p>&copy; Immersive Software Engineering</p>
       <p>University of Limerick</p>
     </div>
-  
 
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> <!-- supabase library -->
+    <script src="supabase-config.js"></script> <!-- connects to supabase -->
+    <script src="fetchlistings.js"></script> <!-- fetch/display listings functionality -->
   </body>
 </html>
