@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       
       // Checkign if user is authenticated to post listings
-    const { data: { user } } = await supabase.auth.getUser();
+    const { data: { user } } = await supabase.auth.getUser(); // pauses execution until the user is fetched
     if (!user) {
       alert('Please sign in first');
       return; // Stops listing submission if not signed in
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     // stores form data in an object
-      const data = {
+      const data = { 
         title: form.title.value,
         description: form.description.value,
         special_conditions: form.special_conditions.value,
@@ -36,12 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
   
-      modal.classList.remove('hidden');
-      form.reset();
+      modal.classList.remove('hidden'); // removes the hidden class from the modal element
+      form.reset(); // resets the form
     });
   });
   
-  // modal button function bringing you back to the compnay dashboard
+  // modal button function bringing you back to the company dashboard
   function goBack() {
     window.location.href = 'CompanyDashboard.html';
   }
