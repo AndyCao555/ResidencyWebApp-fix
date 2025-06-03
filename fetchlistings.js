@@ -44,7 +44,7 @@ async function fetchAndDisplayListings() {
             <p><strong>Special Conditions:</strong> ${listing.special_conditions || ''}</p>
           </div>
           <div class="listing-actions">
-            <button class="apply-button">Apply Now</button>
+          <button onclick="window.location.href='StudentApplication.html'" class="apply-button">Apply Now</button>
           </div>
         `;
         listingsContainer.appendChild(card); //
