@@ -10,16 +10,28 @@ async function sendApplication(event) {
     const reason = document.getElementById('reason').value;
     const cvFile = document.getElementById('cv').files[0];
 
+    if (!cvFile) {
+        alert('Please select a CV file');
+        return;
+    }
+
     try {
+        // Make sure we have access to the Supabase client
+        if (!window.supabase) {
+            throw new Error('Supabase client not initialized');
+        }
+
         // Upload CV to Supabase Storage
-        const { data: uploadData, error: uploadError } = await supabase.storage
+        const { data: uploadData, error: uploadError } = await window.supabase.storage
             .from('cvs')
             .upload(`${Date.now()}-${cvFile.name}`, cvFile);
 
-        if (uploadError) throw uploadError;
+        if (uploadError) {
+            throw new Error(uploadError.message);
+        }
 
         // Get the public URL for the uploaded file
-        const { data: { publicUrl } } = supabase.storage
+        const { data: { publicUrl } } = window.supabase.storage
             .from('cvs')
             .getPublicUrl(uploadData.path);
 
@@ -38,7 +50,6 @@ async function sendApplication(event) {
                 alert('Failed to submit application. Please try again.');
             });
     } catch (error) {
-        console.error('Error:', error);
-        alert('Failed to upload CV. Please try again.');
+        alert('Failed to upload CV: ' + error.message);
     }
 } 
