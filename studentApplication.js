@@ -22,9 +22,9 @@ async function sendApplication(event) {
         }
 
         // Upload CV to Supabase Storage
-        const { data: uploadData, error: uploadError } = await window.supabase.storage
-            .from('cvs')
-            .upload(`${Date.now()}-${cvFile.name}`, cvFile);
+        const { data: uploadData, error: uploadError } = await window.supabase.storage //access the storage bucket
+            .from('cvs') // from the cvs bucket
+            .upload(`${Date.now()}-${cvFile.name}`, cvFile); // upload the file to the bucket
 
         if (uploadError) {
             throw new Error(uploadError.message);
@@ -43,7 +43,7 @@ async function sendApplication(event) {
         };
 
         
-    
+        //.send is the method used to send emails using emailjs
         emailjs.send('default_service', 'template_vcd7r8p', templateParams)
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);

@@ -15,7 +15,7 @@ async function fetchAndDisplayListings() {
 
     const noListingsDiv = document.querySelector('.No-Listings'); // finds html element with class No-Listings
     if (!listings || listings.length === 0) { // if no listings are found
-        if (noListingsDiv) noListingsDiv.style.display = 'block'; // displays the No-Listings element
+        if (noListingsDiv) noListingsDiv.style.display = 'block'; // displays the No-Listings element block makes the elemtn visible
         return;
     } else { // if listings are found
         if (noListingsDiv) noListingsDiv.style.display = 'none'; // hides the No-Listings element
