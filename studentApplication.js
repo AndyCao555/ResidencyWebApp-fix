@@ -1,6 +1,6 @@
-// Initialize EmailJS
+// To authenticate application with EmailJS service
 (function() {
-    emailjs.init("4C8GU28FmBPiW0HNn");
+    emailjs.init("4C8GU28FmBPiW0HNn"); //sets up the connection between application and EmailJS
 })();
 
 async function sendApplication(event) {
@@ -35,12 +35,15 @@ async function sendApplication(event) {
             .from('cvs')
             .getPublicUrl(uploadData.path);
 
+        // templateParams object contains all the information that will be sent in the email
         const templateParams = {
             from_name: "ISE Residency Portal",
             message: `New Student Application for residency\n\nEmail: ${email}\n\nReason: ${reason}\n\nCV Link: ${publicUrl}`,
             to_email: "rafaeljrokafor@gmail.com"
         };
 
+        
+    
         emailjs.send('default_service', 'template_vcd7r8p', templateParams)
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
