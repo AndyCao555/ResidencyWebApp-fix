@@ -1,12 +1,12 @@
-
-async function fetchAndDisplayListings() {
+// fetches and displays the listings 
+async function fetchAndDisplayListings() { 
     const {data: listings, error} = await window.supabase // pauses execution until the data is fetched
-        .from('residency')
+        .from('residency') // fetches the data from the residency table
         .select('*'); // selects all columns from the residency table
         
 
     if (error) { // handles any errors that occur during the fetch
-        console.error('Error fetching listings:', error);
+        console.error('Error fetching listings:', error); 
         return;
     }
 
@@ -47,7 +47,7 @@ async function fetchAndDisplayListings() {
           <button onclick="window.location.href='StudentApplication.html'" class="apply-button">Apply Now</button>
           </div>
         `;
-        listingsContainer.appendChild(card); //
+        listingsContainer.appendChild(card); // adds the card to the listings-content element
       });
     }
     

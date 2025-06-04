@@ -50,16 +50,16 @@
     </div>
 
     <script>
-        const form = document.getElementById('listingForm');
-        const modal = document.getElementById('modal');
+        const form = document.getElementById('listingForm'); // gets the form element
+        const modal = document.getElementById('modal'); // gets the modal element
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            modal.classList.remove('hidden');
+        form.addEventListener('submit', function(e) { // listens for the submit event on the form
+            e.preventDefault(); // stops the form from submitting
+            modal.classList.remove('hidden'); // removes the hidden class from the modal element
         });
 
-        function goBack() {
-            window.location.href = 'CompanyDashboard.html';
+        function goBack() { // function leading back to the company dashboard
+            window.location.href = 'CompanyDashboard.html'; 
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script> <!-- supabase library -->
